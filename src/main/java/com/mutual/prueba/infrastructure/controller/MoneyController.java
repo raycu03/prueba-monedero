@@ -23,8 +23,8 @@ public class MoneyController {
   private final MoneyRequestMapper moneyRequestMapper;
 
   @PostMapping("/")
-  public Money save(@RequestBody MoneyRequestDto money) {
-    return moneyApplicationService.save(moneyRequestMapper.toEntity(money));
+  public void save(@RequestBody MoneyRequestDto money) {
+     moneyApplicationService.save(moneyRequestMapper.toEntity(money));
   }
 
   @GetMapping("/canitdadMonedas")
